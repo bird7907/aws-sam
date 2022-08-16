@@ -11,10 +11,8 @@ pipeline {
     stage('Build') {
       steps {
         unstash 'venv'
-          dir ('hello-world') {
-            sh 'npm ci'
-            sh 'npm run integ-test'
-          }
+        sh 'venv/bin/sam build'
+        stash includes: '**/.aws-sam/**/*', name: 'aws-sam'
       }
     }
     stage('beta') {
