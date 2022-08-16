@@ -21,6 +21,7 @@ describe("GET api test", async () => {
       .promise();
     const endpointOutput = response.Stacks[0].Outputs.find((x) => x.OutputKey === ENDPOINT_KEY);
     const apiEndpoint = endpointOutput.OutputValue;
+    console.log(apiEndpoint)
     apiResponse = await axios.get(apiEndpoint);
   });
 
