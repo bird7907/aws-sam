@@ -21,7 +21,7 @@ exports.lambdaHandler = async (event, context) => {
     response = {
       statusCode: 200,
       body: JSON.stringify({
-        message: "Hello world for Test CI/CD by Jenkins SAM plugin",
+        message: "Hello world for Test CI/CD of Serverless Application",
         // location: ret.data.trim()
       }),
     };
